@@ -31,7 +31,12 @@ public abstract class car {
 		currentSpeed = 0;
 	}
 
+	
+	
 	public abstract double speedFactor();
+	
+	
+	
 	
 	private void incrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
