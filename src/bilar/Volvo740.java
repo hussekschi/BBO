@@ -10,7 +10,7 @@ public class Volvo740 extends car{
 	public Color color; // Color of the car
 	public String modelName; // The car model name
 
-	public Volvo740() {
+	public Volvo740() {  //Själva 
 		color = Color.RED;
 		enginePower = 100;
 		modelName = "Volvo740";
@@ -19,7 +19,7 @@ public class Volvo740 extends car{
 
 	
 
-	public double speedFactor() {
+	public double speedFactor() {//speeddfactor  
 		return enginePower * 0.01 * trimFactor;
 	}
 
