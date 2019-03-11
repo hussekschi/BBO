@@ -5,33 +5,37 @@ import java.util.ArrayList;
 import javafx.scene.paint.Color;
 
 public abstract class car {
-	
-	int x; //beräknar bilens x kordinat
-	int y;//beräknar bilens y kordinat
-	int diraction; //beräknar bilens riktning 
+
+	int x; // beräknar bilens x kordinat
+	int y;// beräknar bilens y kordinat
+	int diraction; // beräknar bilens riktning
 	public double enginePower; // Engine power of the car
 	public double currentSpeed; // The current speed of the car
 	public Color color; // Color of the car
 	public String modelName; // The car model name
-		
+
+	public car(String string, Color , int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private double getEnginePower() { // Den retuenar enginePower
-		
+
 		return enginePower;
 	}
 
-	private double getCurrentSpeed() { //Den returnar currentSpeed
-		if(0 >= enginePower && enginePower <= 0	) {
-			
+	private double getCurrentSpeed() { // Den returnar currentSpeed
+		if (0 >= enginePower && enginePower <= 0) {
+
 		}
-		
+
 		return currentSpeed;
 	}
 
-	public Color getColor() { //<den returnar color
+	public Color getColor() { // <den returnar color
 		return color;
 	}
 
-	protected void startEngine() { //variabel för currentSpeed 
+	protected void startEngine() { // variabel för currentSpeed
 		currentSpeed = 0.1;
 	}
 
@@ -39,57 +43,46 @@ public abstract class car {
 		currentSpeed = 0;
 	}
 
-	
-	
-	public abstract double speedFactor(); //kallar på speedfactor
-	
-	public void move() {//bestämmer riktnigen som bilen kör i 
-		switch(diraction) {
-		
+	public abstract double speedFactor(); // kallar på speedfactor
+
+	public void move() {// bestämmer riktnigen som bilen kör i
+		switch (diraction) {
+
 		case 0:
-			y+= currentSpeed;
+			y += currentSpeed;
 			break;
 		case 1:
-			x+= currentSpeed;
+			x += currentSpeed;
 			break;
 		case 2:
-			y+= currentSpeed;
+			y += currentSpeed;
 			break;
 		case 3:
-			x+= currentSpeed;
+			x += currentSpeed;
 			break;
 		}
-		 
-		
+
 	}
-	
-	
-	
-	
-	private void incrementSpeed(double amount) {   //Visar currentspeed och lägger ihop currentspeed med speedfacor
+
+	private void incrementSpeed(double amount) { // Visar currentspeed och lägger ihop currentspeed med speedfacor
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
 	}
-	private void decrementSpeed(double amount) {  //Visar currentspeed och suptraherar currentspeed med speedfacor
+
+	private void decrementSpeed(double amount) { // Visar currentspeed och suptraherar currentspeed med speedfacor
 		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
 	}
 
-	private void gas(double amount) {  //variabel för hur mycket "gas" de finns
-		if(amount >= 0 && amount <= 1) {
+	public void gas(double amount) { // variabel för hur mycket "gas" de finns
+		if (amount <= 0 && amount >= 1) {
 			incrementSpeed(amount);
 		}
-		
-		
-		
-		
-		
+
 	}
 
-	private void brake(double amount) {  //
-		if(amount >= 0 && amount <= 1) {
+	public void brake(double amount) { //
+		if (amount >= 0 && amount <= 1) {
 			decrementSpeed(amount);
 		}
 	}
-
-	
 
 }
