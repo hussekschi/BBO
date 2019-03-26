@@ -14,10 +14,7 @@ public abstract class car {
 	public Color color; // Color of the car
 	public String modelName; // The car model name
 
-	public car(String string, Color , int i) {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	private double getEnginePower() { // Den retuenar enginePower
 
 		return enginePower;
@@ -84,5 +81,30 @@ public abstract class car {
 			decrementSpeed(amount);
 		}
 	}
+	
+	public void setYpos(int ypos) {
+		
+		y = ypos;
+	}
+	
+	public void setXpos(int xpos) {
+		
+		x = xpos; 
+	
+	}
+
+	public int getYpos() {
+		return y;
+	}
+
+	public int getXpos() {
+		return x;
+	}
+	public static int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 
 }

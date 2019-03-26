@@ -1,6 +1,11 @@
 package bilar;
 
+import javafx.scene.paint.Color;
+
 public abstract class truck extends car {
+
+	
+
 
 	int minst_vinkel = 0;
 	int högst_vinkel = 70;
@@ -30,6 +35,7 @@ public abstract class truck extends car {
 	public boolean candrive() {
 		return vinkel == 0;
 	}
+	
 	
 
 	@Override

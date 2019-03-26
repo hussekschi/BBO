@@ -1,49 +1,41 @@
 package bilar;
 
+import java.util.ArrayList;
+
 public abstract class car_truck extends truck {
-	
-	
-	
-	
-	public car_truck(){
-		
+
+	ArrayList<car> cars;
+
+	public car_truck() {
+		cars = new ArrayList<car>();
 	}
-	
-	
-	
+
 	int ramp_uppe = 1;
 	int ramp_nere = 0;
 	int ramp;
-	
-	
-	
-	
+
 	public void updateAllPositions() {
-		for (Car car : car) {
-			car.setXpos.(this.getXpos());
-			car.setYpos.(this.getYpos());
-			
-			
+		for (car c : cars) {
+
+			c.setXpos(this.getXpos());
+			c.setYpos(this.getYpos());
+
 		}
 	}
-	
-	
+
 	public void loadcar(car c) {
-		if (ramp_uppe()&& car.size()< 5 && c ! = this) {
-			
+		if (ramp_nere == 1 && cars.size() < 5 && c != this) {
+			cars.add(c);
+
 		}
-		cars.add(c);
 	}
-	
+
 	public void unloadcard() {
-		if(flatbed.isopne() && car.size() > 0)
-			cars.remove(cars.sizr()-1);
-		
+		if (ramp_nere == 1 && car.size() > 0)
+			cars.remove(cars.size() - 1);
+
 	}
-	
-	
-	
-	
+
 	public void rampraise() {
 		if (0 == currentSpeed)
 			ramp++;
@@ -58,12 +50,12 @@ public abstract class car_truck extends truck {
 
 		if (ramp < ramp_nere)
 			ramp = ramp_nere;
-		
+
 	}
+
 	public boolean candrive() {
 		return ramp == 1;
 	}
-
 
 	@Override
 	public void gas(double amount) {
@@ -72,5 +64,4 @@ public abstract class car_truck extends truck {
 
 	}
 
-	
 }

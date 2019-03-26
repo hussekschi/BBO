@@ -2,10 +2,16 @@ package bilar;
 
 import javafx.scene.paint.Color;
 
-public class ferry extends car {
+public  class ferry  {
 
 	public ferry() {
-		super("cruse hadi", Color.ALICEBLUE, 1 );
+		
+	}
+
+	@Override
+	public double speedFactor() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
