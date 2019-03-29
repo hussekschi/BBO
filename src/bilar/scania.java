@@ -2,21 +2,34 @@ package bilar;
 
 import javafx.scene.paint.Color;
 
-public class scania extends truck {
-	
-	
-	truck truck;
-	car_truck car_truck;
-	
-	
+public class scania extends vehicle {
+
+	private Flatbed flatbed;
+
+	public scania() {
+		super(Color.BLUE, 500, "Scania");
+		flatbed = new Flatbed();	
+	}
+
+	public void raise() {
+		if (getCurrentSpeed() == 0)
+			flatbed.raise();
+	}
+
+	public void lower() {
+		if (getCurrentSpeed() == 0)
+			flatbed.lower();
+	}
+
+	@Override
+	public void gas(double amount) {
+		if (flatbed.isDown())
+			super.gas(amount);
+	}
 
 	@Override
 	public double speedFactor() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getEnginePower() * 0.002;
 	}
 
-		
-	}
-
-
+}
