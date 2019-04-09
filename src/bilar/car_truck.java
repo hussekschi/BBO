@@ -24,19 +24,7 @@ public class car_truck extends vehicle {
 		}
 	}
 
-	public void loadcar(vehicle c) {
-		if (flatbed.isOpen() && car.size() < 5 && c != this) {
-			cars.add(c);
-
-		}
-	}
-
-	public void unloadcard() {
-		if (flatbed.isOpen() && vehicle.size() > 0)
-			cars.remove(cars.size() - 1);
-
-	}
-
+	
 	public void open() {
 		if (0 == getCurrentSpeed())
 			flatbed.open();

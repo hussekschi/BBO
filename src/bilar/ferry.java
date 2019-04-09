@@ -11,7 +11,7 @@ public class ferry extends vehicle {
 		loader = new Loader();
 	}
 
-
+//
 	
 	@Override
 	public double speedFactor() {
