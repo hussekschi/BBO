@@ -8,7 +8,7 @@ public class Scania extends Vehicle {
 
 	public Scania() {
 		super(Color.BLUE, 500, "Scania");
-		flatbed = new Flatbed();	
+		flatbed = new Flatbed();
 	}
 
 	public void raise() {
@@ -21,8 +21,6 @@ public class Scania extends Vehicle {
 			flatbed.lower();
 	}
 
-	
-	
 	@Override
 	public void gas(double amount) {
 		if (flatbed.isDown())

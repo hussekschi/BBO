@@ -1,7 +1,5 @@
 package bilar;
 
-import java.util.ArrayList;
-
 import javafx.scene.paint.Color;
 
 public abstract class Vehicle {
@@ -57,10 +55,10 @@ public abstract class Vehicle {
 			x += currentSpeed;
 			break;
 		case 2:
-			y += currentSpeed;
+			y -= currentSpeed;
 			break;
 		case 3:
-			x += currentSpeed;
+			x -= currentSpeed;
 			break;
 		}
 
@@ -83,7 +81,7 @@ public abstract class Vehicle {
 	}
 
 	public void gas(double amount) { // variabel för hur mycket "gas" de finns
-		if (amount <= 0 && amount >= 1) {
+		if (amount >= 0 && amount <= 1) {
 			incrementSpeed(amount);
 		}
 
