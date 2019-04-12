@@ -2,11 +2,11 @@ package bilar;
 
 import javafx.scene.paint.Color;
 
-public class scania extends vehicle {
+public class Scania extends Vehicle {
 
 	private Flatbed flatbed;
 
-	public scania() {
+	public Scania() {
 		super(Color.BLUE, 500, "Scania");
 		flatbed = new Flatbed();	
 	}
@@ -21,6 +21,8 @@ public class scania extends vehicle {
 			flatbed.lower();
 	}
 
+	
+	
 	@Override
 	public void gas(double amount) {
 		if (flatbed.isDown())

@@ -2,7 +2,7 @@ package bilar;
 
 import javafx.scene.paint.Color;
 
-public class Volvo740 extends vehicle {
+public class Volvo740 extends Vehicle {
 
 	public final static double trimFactor = 1.25;
 

@@ -4,30 +4,27 @@ import java.util.ArrayList;
 
 import sun.java2d.loops.Blit;
 
-public class Loader  {
+public class Loader {
 
-	private ArrayList<vehicle> cars;
+	private ArrayList<Vehicle> cars;
 
-	public void load(vehicle c) {
-		
-		
+	public void loadCar(Vehicle c) {
+		cars.add(c);
 	}
-	
-	public void loadcar(vehicle c) {
-		
-			cars.add(c);
 
+	public void unloadLastCar() {
+		cars.remove(cars.size() - 1);
+	}
+
+	public void unloadFirstCar() {
+		cars.remove(0);
+	}
+
+	public void move(double x, double y) {
+		for (Vehicle vehicle : cars) {
+			vehicle.setXpos(x);
+			vehicle.setYpos(y);
 		}
-	
-
-	public void unloadcard() {
-		
-			cars.remove(cars.size() - 1);
-
 	}
 
-	
-	
-
-	
 }

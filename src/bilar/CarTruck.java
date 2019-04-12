@@ -1,34 +1,33 @@
 package bilar;
 
-import java.util.ArrayList;
-
 import javafx.scene.paint.Color;
 
-public class car_truck extends vehicle {
+public class CarTruck extends Vehicle {
 
 	private Flatbed flatbed;
 	private Loader loader;
 
-	public car_truck() {
+	public CarTruck() {
 		super(Color.WHITE, 500, "Transport");
 		flatbed = new Flatbed();
-		
+		loader = new Loader();
 
 	}
 
-	public void updateAllPositions() {
-		for (vehicle c : cars) {
-			c.setXpos(this.getXpos());
-			c.setYpos(this.getYpos());
-
-		}
-	}
-
-	
 	public void open() {
 		if (0 == getCurrentSpeed())
 			flatbed.open();
 
+	}
+
+	public void loadCar(Vehicle v) {
+		if (flatbed.isOpen())
+			loader.loadCar(v);
+	}
+
+	public void unloadCar() {
+		if (flatbed.isOpen())
+			loader.unloadLastCar();
 	}
 
 	public void close() {
@@ -48,4 +47,9 @@ public class car_truck extends vehicle {
 		return getEnginePower() * 0.002;
 	}
 
+	@Override
+	public void move() {
+		super.move();
+		loader.move(this.getXpos(), this.getYpos());
+	}
 }

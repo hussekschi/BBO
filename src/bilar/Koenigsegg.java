@@ -2,12 +2,12 @@ package bilar;
 
 import javafx.scene.paint.Color;
 
-public class Fiat extends Vehicle {
+public class Koenigsegg extends Vehicle {
 
-	public final static double trimFactor = 101;
+	public final static double trimFactor = 100.25;
 
-	public Fiat() { // Själva
-		super(Color.RED, 500, "Fiat");
+	public Koenigsegg() {
+		super(Color.RED, 500, "Koeningsegg");
 		stopEngine();
 	}
 

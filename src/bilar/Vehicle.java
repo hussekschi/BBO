@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 import javafx.scene.paint.Color;
 
-public abstract class vehicle {
+public abstract class Vehicle {
 
-	private int x; // beräknar bilens x kordinat
-	private int y;// beräknar bilens y kordinat
+	private double x; // beräknar bilens x kordinat
+	private double y;// beräknar bilens y kordinat
 	private int diraction; // beräknar bilens riktning
 	private double enginePower; // Engine power of the car
 	private double currentSpeed; // The current speed of the car
 	private Color color; // Color of the car
 	private String modelName; // The car model name
 
-	public vehicle(Color c, double ep, String m) {
+	public Vehicle(Color c, double ep, String m) {
 		color = c;
 		enginePower = ep;
 		modelName = m;
@@ -40,7 +40,8 @@ public abstract class vehicle {
 		currentSpeed = 0.1;
 	}
 
-	protected void stopEngine() { // variabel för stopengine som gör att billen stannar
+	protected void stopEngine() { // variabel för stopengine som gör att billen
+									// stannar
 		currentSpeed = 0;
 	}
 
@@ -65,13 +66,17 @@ public abstract class vehicle {
 
 	}
 
-	private void incrementSpeed(double amount) { // Visar currentspeed och lägger ihop currentspeed med speedfacor
+	private void incrementSpeed(double amount) { // Visar currentspeed och
+													// lägger ihop currentspeed
+													// med speedfacor
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
 		if (currentSpeed > getEnginePower())
 			currentSpeed = getEnginePower();
 	}
 
-	private void decrementSpeed(double amount) { // Visar currentspeed och suptraherar currentspeed med speedfacor
+	private void decrementSpeed(double amount) { // Visar currentspeed och
+													// suptraherar currentspeed
+													// med speedfacor
 		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
 		if (currentSpeed < 0)
 			currentSpeed = 0;
@@ -90,22 +95,22 @@ public abstract class vehicle {
 		}
 	}
 
-	public void setYpos(int ypos) {
+	public void setYpos(double ypos) {
 
 		y = ypos;
 	}
 
-	public void setXpos(int xpos) {
+	public void setXpos(double xpos) {
 
 		x = xpos;
 
 	}
 
-	public int getYpos() {
+	public double getYpos() {
 		return y;
 	}
 
-	public int getXpos() {
+	public double getXpos() {
 		return x;
 	}
 

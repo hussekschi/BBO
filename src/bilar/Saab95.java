@@ -2,7 +2,7 @@ package bilar;
 
 import javafx.scene.paint.Color;
 
-public class Saab95 extends vehicle {
+public class Saab95 extends Vehicle {
 
 	public boolean turboOn;
 
